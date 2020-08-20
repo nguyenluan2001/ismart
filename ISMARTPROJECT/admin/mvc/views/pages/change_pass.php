@@ -19,14 +19,14 @@
         <div id="content" class="fl-right">                       
             <div class="section" id="detail-page">
                 <div class="section-detail">
-                    <form method="POST">
+                    <form action="?controller=Admin&action=ResetPass" method="POST">
                         <label for="old-pass">Mật khẩu cũ</label>
                         <input type="password" name="pass-old" id="pass-old">
                         <label for="new-pass">Mật khẩu mới</label>
                         <input type="password" name="pass-new" id="pass-new">
                         <label for="confirm-pass">Xác nhận mật khẩu</label>
                         <input type="password" name="confirm-pass" id="confirm-pass">
-                        <button type="submit" name="btn-submit" id="btn-submit">Cập nhật</button>
+                        <button type="submit" name="btn-change-pass" id="btn-submit">Cập nhật</button>
                     </form>
                 </div>
             </div>

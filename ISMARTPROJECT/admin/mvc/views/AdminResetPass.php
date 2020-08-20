@@ -28,7 +28,7 @@
                         <input type="password" name="pass-new" id="pass-new">
                         <label for="confirm-pass">Xác nhận mật khẩu</label>
                         <input type="password" name="confirm-pass" id="confirm-pass">
-                        <button type="submit" name="btn-submit" id="btn-submit">Cập nhật</button>
+                        <button type="submit" name="btn-change-pass" id="btn-submit">Cập nhật</button>
                     </form>
                 </div>
             </div>

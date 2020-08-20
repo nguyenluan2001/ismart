@@ -82,11 +82,11 @@
                                 <div id="thumb-circle" class="fl-left">
                                     <img src="public/images/img-admin.png">
                                 </div>
-                                <h3 id="account" class="fl-right">Admin</h3>
+                                <h3 id="account" class="fl-right"><?php echo $_SESSION['admin']['fullname']?></h3>
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a href="?controller=Admin&action=AdminInfo" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
-                                <li><a href="#" title="Thoát">Thoát</a></li>
+                                <li><a href="?controller=Logout&action=LogoutAction" title="Thoát">Thoát</a></li>
                             </ul>
                         </div>
                     </div>

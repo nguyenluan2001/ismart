@@ -7,7 +7,7 @@
             </div>
             <div class="section" id="detail-page">
                 <div class="section-detail">
-                    <form method="POST">
+                    <form action ="?controller=Products&action=AddProduct" method="POST" enctype="multipart/form-data">
                         <label for="product-name">Tên sản phẩm</label>
                         <input type="text" name="product_name" id="product-name">
                         <label for="product-code">Mã sản phẩm</label>
@@ -15,12 +15,17 @@
                         <label for="price">Giá sản phẩm</label>
                         <input type="text" name="price" id="price">
                         <label for="desc">Mô tả ngắn</label>
-                        <textarea name="desc" id="desc"></textarea>
+                        <textarea name="product_desc" id="desc"></textarea>
+                        <select name="cat">
+                            <option value="">-- Chọn loại sản phẩm --</option>
+                            <option value="1">Thời trang</option>
+                            <option value="2">Điện tử</option>
+                        </select>
                         <label for="desc">Chi tiết</label>
                         <textarea name="desc" id="desc" class="ckeditor"></textarea>
                         <label>Hình ảnh</label>
                         <div id="uploadFile">
-                            <input type="file" name="file" id="upload-thumb">
+                            <input type="file" name="file" id="upload-thumb" >
                             <input type="submit" name="btn-upload-thumb" value="Upload" id="btn-upload-thumb">
                             <img src="public/images/img-thumb.png">
                         </div>
@@ -37,7 +42,7 @@
                             <option value="1">Chờ duyệt</option>
                             <option value="2">Đã đăng</option>
                         </select>
-                        <button type="submit" name="btn-submit" id="btn-submit">Thêm mới</button>
+                        <button type="submit" name="btn-add-product" id="btn-submit">Thêm mới</button>
                     </form>
                 </div>
             </div>

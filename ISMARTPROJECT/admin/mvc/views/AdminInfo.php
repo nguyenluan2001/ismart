@@ -13,7 +13,7 @@
                     <a href="?controller=Admin&action=ResetPass" title="">Đổi mật khẩu</a>
                 </li>
                 <li>
-                    <a href="?page=list_post" title="">Thoát</a>
+                    <a href="?controller=Logout&action=LogoutAction" title="">Thoát</a>
                 </li>
             </ul>
         </div>

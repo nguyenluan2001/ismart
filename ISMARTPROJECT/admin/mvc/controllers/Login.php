@@ -48,6 +48,7 @@ class Login extends Controller
                 if($temp->checkLogin($username,$password))
                 {
                     $_SESSION['is_login']=true;
+                    $_SESSION['admin']=$temp->Get_User($username,$password);
                     header("location:?controller=Pages&action=Get_List_Pages");
                 }
                 else

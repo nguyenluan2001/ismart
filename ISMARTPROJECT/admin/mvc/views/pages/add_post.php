@@ -7,7 +7,7 @@
             </div>
             <div class="section" id="detail-page">
                 <div class="section-detail">
-                    <form method="POST">
+                    <form action="?controller=Posts&action=AddPost" method="POST">
                         <label for="title">Tiêu đề</label>
                         <input type="text" name="title" id="title">
                         <label for="title">Slug ( Friendly_url )</label>
@@ -27,7 +27,7 @@
                             <option value="2">Xã hội</option>
                             <option value="3">Tài chính</option>
                         </select>
-                        <button type="submit" name="btn-submit" id="btn-submit">Thêm mới</button>
+                        <button type="submit" name="btn-add-post" id="btn-submit">Thêm mới</button>
                     </form>
                 </div>
             </div>

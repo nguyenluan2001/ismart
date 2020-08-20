@@ -27,7 +27,7 @@
                             </td>
                             <td class="clearfix">
                                 <div class="tb-title fl-left">
-                                    <a href="" title="">Bóng đá</a>
+                                    <a href="?controller=Products&action=Get_List_Products&id=1" title="">Thời trang</a>
                                 </div>
                                 <ul class="list-operation fl-right">
                                     <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
@@ -45,7 +45,7 @@
                             </td>
                             <td class="clearfix">
                                 <div class="tb-title fl-left">
-                                    <a href="" title="">--- Trong nước</a>
+                                    <a href="?controller=Products&action=Get_List_Products&id=2" title="">Điện tử</a>
                                 </div>
                                 <ul class="list-operation fl-right">
                                     <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
@@ -57,78 +57,7 @@
                             <td><span class="tbody-text">Admin</span></td>
                             <td><span class="tbody-text">12-07-2016</span></td>
                         </tr>
-                        <tr>
-                            <td><input type="checkbox" name="checkItem" class="checkItem"></td>
-                            <td><span class="tbody-text">3</span>
-                            </td>
-                            <td class="clearfix">
-                                <div class="tb-title fl-left">
-                                    <a href="" title="">--- Bên lề</a>
-                                </div>
-                                <ul class="list-operation fl-right">
-                                    <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                    <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </td>
-                            <td><span class="tbody-text">1</span></td>
-                            <td><span class="tbody-text">Hoạt động</span></td>
-                            <td><span class="tbody-text">Admin</span></td>
-                            <td><span class="tbody-text">12-07-2016</span></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="checkItem" class="checkItem"></td>
-                            <td><span class="tbody-text">4</span>
-                            </td>
-                            <td class="clearfix">
-                                <div class="tb-title fl-left">
-                                    <a href="" title="">Thế giới</a>
-                                </div>
-                                <ul class="list-operation fl-right">
-                                    <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                    <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </td>
-                            <td><span class="tbody-text">0</span></td>
-                            <td><span class="tbody-text">Hoạt động</span></td>
-                            <td><span class="tbody-text">Admin</span></td>
-                            <td><span class="tbody-text">12-07-2016</span></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="checkItem" class="checkItem"></td>
-                            <td><span class="tbody-text">5</span>
-                            </td>
-                            <td class="clearfix">
-                                <div class="tb-title fl-left">
-                                    <a href="" title="">--- Trong nước</a>
-                                </div>
-                                <ul class="list-operation fl-right">
-                                    <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                    <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </td>
-                            <td><span class="tbody-text">4</span></td>
-                            <td><span class="tbody-text">Hoạt động</span></td>
-                            <td><span class="tbody-text">Admin</span></td>
-                            <td><span class="tbody-text">12-07-2016</span></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="checkItem" class="checkItem"></td>
-                            <td><span class="tbody-text">6</span>
-                            </td>
-                            <td class="clearfix">
-                                <div class="tb-title fl-left">
-                                    <a href="" title="">--- Bên lề</a>
-                                </div>
-                                <ul class="list-operation fl-right">
-                                    <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                    <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </td>
-                            <td><span class="tbody-text">4</span></td>
-                            <td><span class="tbody-text">Hoạt động</span></td>
-                            <td><span class="tbody-text">Admin</span></td>
-                            <td><span class="tbody-text">12-07-2016</span></td>
-                        </tr>
+                        
                     </tbody>
                     <tfoot>
                         <tr>
