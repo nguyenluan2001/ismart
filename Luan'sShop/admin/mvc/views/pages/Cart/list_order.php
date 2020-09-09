@@ -32,60 +32,67 @@
                             <input type="submit" name="sm_action" value="Áp dụng">
                         </form>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table list-table-wp">
-                            <thead>
-                                <tr>
-                                    <td><input type="checkbox" name="checkAll" id="checkAll"></td>
-                                    <td><span class="thead-text">STT</span></td>
-                                    <td><span class="thead-text">Mã đơn hàng</span></td>
-                                    <td><span class="thead-text">Họ và tên</span></td>
-                                    <td><span class="thead-text">Số sản phẩm</span></td>
-                                    <td><span class="thead-text">Tổng giá</span></td>
-                                    <td><span class="thead-text">Trạng thái</span></td>
-                                    <td><span class="thead-text">Thời gian</span></td>
-                                    <td><span class="thead-text">Chi tiết</span></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $count=1; foreach ($data['list_orders'] as $item) { ?>
+                    <form action="?controller=Cart&action=Delete_Order" method="POST">
+                        <div class="table-responsive">
+                            <table class="table list-table-wp">
+                                <thead>
                                     <tr>
-                                        <td><input type="checkbox" name="checkItem" class="checkItem"></td>
-                                        <td><span class="tbody-text"><?php echo $count?></h3></span>
-                                        <td><span class="tbody-text">WEB00001</h3></span>
-                                        <td>
-                                            <div class="tb-title fl-left">
-                                                <a href="" title=""><?php echo $item['fullname']?></a>
-                                            </div>
-                                            <ul class="list-operation fl-right">
-                                                <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                                <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                                            </ul>
-                                        </td>
-                                        <td><span class="tbody-text"><?php echo $item['num_order']?></span></td>
-                                        <td><span class="tbody-text"><?php echo number_format($item['total'])?> VNĐ</span></td>
-                                        <td><span class="tbody-text">Hoạt động</span></td>
-                                        <td><span class="tbody-text">12-07-2016</span></td>
-                                        <td><a href="?page=detail_order" title="" class="tbody-text">Chi tiết</a></td>
+                                        <td><input type="checkbox" name="checkAll" id="checkAll"></td>
+                                        <td><span class="thead-text">STT</span></td>
+                                        <td><span class="thead-text">Mã đơn hàng</span></td>
+                                        <td><span class="thead-text">Họ và tên</span></td>
+                                        <td><span class="thead-text">Số sản phẩm</span></td>
+                                        <td><span class="thead-text">Tổng giá</span></td>
+                                        <td><span class="thead-text">Trạng thái</span></td>
+                                        <td><span class="thead-text">Thời gian</span></td>
+                                        <td><span class="thead-text">Chi tiết</span></td>
                                     </tr>
-                                <?php $count++; } ?>
+                                </thead>
+                                <tbody>
+                                    <?php $count = 1;
+                                    foreach ($data['list_orders'] as $item) { ?>
+                                        <tr>
+                                            <td><input type="checkbox" name="checkItem[<?php echo $item['id']?>]" class="checkItem"></td>
+                                            <td><span class="tbody-text"><?php echo $count ?></h3></span>
+                                            <td><span class="tbody-text">WEB00001</h3></span>
+                                            <td>
+                                                <div class="tb-title fl-left">
+                                                    <a href="?controller=Cart&action=Detail_Order&id=<?php echo $item['id']?>" title=""><?php echo $item['fullname'] ?></a>
+                                                </div>
+                                                <ul class="list-operation fl-right">
+                                                    <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                                                    <li><a href="?controller=Cart&action=Delete_Order&id=<?php echo $item['id'] ?>" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </td>
+                                            <td><span class="tbody-text"><?php echo $item['num_order'] ?></span></td>
+                                            <td><span class="tbody-text"><?php echo number_format($item['total']) ?> VNĐ</span></td>
+                                            <td><span class="tbody-text">Hoạt động</span></td>
+                                            <td><span class="tbody-text">12-07-2016</span></td>
+                                            <td><a href="?page=detail_order" title="" class="tbody-text">Chi tiết</a></td>
+                                        </tr>
+                                    <?php $count++;
+                                    } ?>
 
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td><input type="checkbox" name="checkAll" id="checkAll"></td>
-                                    <td><span class="tfoot-text">STT</span></td>
-                                    <td><span class="tfoot-text">Mã đơn hàng</span></td>
-                                    <td><span class="tfoot-text">Họ và tên</span></td>
-                                    <td><span class="tfoot-text">Số sản phẩm</span></td>
-                                    <td><span class="tfoot-text">Tổng giá</span></td>
-                                    <td><span class="tfoot-text">Trạng thái</span></td>
-                                    <td><span class="tfoot-text">Thời gian</span></td>
-                                    <td><span class="tfoot-text">Chi tiết</span></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td><input type="checkbox" name="checkAll" id="checkAll"></td>
+                                        <td><span class="tfoot-text">STT</span></td>
+                                        <td><span class="tfoot-text">Mã đơn hàng</span></td>
+                                        <td><span class="tfoot-text">Họ và tên</span></td>
+                                        <td><span class="tfoot-text">Số sản phẩm</span></td>
+                                        <td><span class="tfoot-text">Tổng giá</span></td>
+                                        <td><span class="tfoot-text">Trạng thái</span></td>
+                                        <td><span class="tfoot-text">Thời gian</span></td>
+                                        <td><span class="tfoot-text">Chi tiết</span></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <input type="submit" value="Xóa" >
+                        <!-- <input type="submit" value="Xóa tất cả"> -->
+                    </form>
+
                 </div>
             </div>
             <div class="section" id="paging-wp">

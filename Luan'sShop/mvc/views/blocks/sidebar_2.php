@@ -128,6 +128,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <input type="submit" value="Lọc">
                     </form>
                 </div>
             </div>

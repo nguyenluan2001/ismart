@@ -27,23 +27,49 @@ class Cart extends Controller
         $id=(int)$_GET['id'];
         $temp=$this->model('ProductsModel');
         $product=$temp->Get_Product_By_Id($id);
-        $qty=$_POST['qty'];
-        if(!empty($_SESSION['cart']['buy']) && isset($_SESSION['cart']['buy'][$id]))
+        $qty=0;
+        if(isset($_POST['qty']))
         {
-            $qty=$_SESSION['cart']['buy'][$id]['qty']+$_POST['qty'];
+            $qty=$_POST['qty'];
+            if(!empty($_SESSION['cart']['buy']) && isset($_SESSION['cart']['buy'][$id]))
+            {
+                $qty=$_SESSION['cart']['buy'][$id]['qty']+$_POST['qty'];
+            }
+            $_SESSION['cart']['buy'][$id]=array(
+                'id'=>$id,
+                'product_name'=>$product['product_name'],
+                'product_thumb'=>$product['product_thumb'],
+                'product_desc'=>$product['product_desc'],
+                'product_intro'=>$product['product_intro'],
+                'price'=>$product['price'],
+                'product_code'=>$product['product_code'],
+                'cat_id'=>$product['cat_id'],
+                'qty'=>$qty,
+                'sub_total'=>$qty*$product['price'],
+            );
+
         }
-        $_SESSION['cart']['buy'][$id]=array(
-            'id'=>$id,
-            'product_name'=>$product['product_name'],
-            'product_thumb'=>$product['product_thumb'],
-            'product_desc'=>$product['product_desc'],
-            'product_intro'=>$product['product_intro'],
-            'price'=>$product['price'],
-            'product_code'=>$product['product_code'],
-            'cat_id'=>$product['cat_id'],
-            'qty'=>$qty,
-            'sub_total'=>$qty*$product['price'],
-        );
+        else
+        {
+            $qty=1;
+            if(!empty($_SESSION['cart']['buy']) && isset($_SESSION['cart']['buy'][$id]))
+            {
+                $qty=$_SESSION['cart']['buy'][$id]['qty']+$_POST['qty'];
+            }
+            $_SESSION['cart']['buy'][$id]=array(
+                'id'=>$id,
+                'product_name'=>$product['product_name'],
+                'product_thumb'=>$product['product_thumb'],
+                'product_desc'=>$product['product_desc'],
+                'product_intro'=>$product['product_intro'],
+                'price'=>$product['price'],
+                'product_code'=>$product['product_code'],
+                'cat_id'=>$product['cat_id'],
+                'qty'=>$qty,
+                'sub_total'=>$qty*$product['price'],
+            );
+        }
+       
         $this->Update_Cart();
         header("location:?controller=Cart&action=Index");
         
@@ -90,8 +116,37 @@ class Cart extends Controller
             $customer=$tmp->Get_Customer($fullname,$email,$address,$phone);
             $customerID=$customer['id'];
             $temp->Add_Order($customerID);
+            $tmp_2=$this->model('ProductsModel');
+            foreach($_SESSION['cart']['buy'] as $item)
+            {
+                $product=$tmp_2->Get_Product_By_Id($item['id']);
+                $current_qty=$product['qty'];
+                $new_qty=$current_qty-$item['qty'];
+                $tmp_2->Update_Product($item['id'],$new_qty,$item['qty']);
+
+            }
         }
         
+        
+    }
+    public function Delete()
+    {
+        if(isset($_GET['id']))
+        {
+            $id=(int)$_GET['id'];
+            unset($_SESSION['cart']['buy'][$id]);
+        }
+        else 
+        {
+            foreach($_SESSION['cart']['buy'] as $key=>$value)
+            {
+                unset($_SESSION['cart']['buy'][$key]);
+            }
+        }
+        $this->Update_Cart();
+        header("location:?controller=Cart&action=Index");
+
+
     }
 }
 

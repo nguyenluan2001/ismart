@@ -22,12 +22,12 @@
                         <?php foreach($data['list_posts'] as $item){?>
                             <li class="clearfix">
                             <a href="?controller=Blog&action=Detail_Post&id=<?php echo $item['id']?>" title="" class="thumb fl-left">
-                                <img src="public/images/img-post-01.jpg" alt="">
+                                <img src="admin/uploads/POST/<?php echo $item['post_thumb']?>" alt="">
                             </a>
                             <div class="info fl-right">
                                 <a href="?controller=Blog&action=Detail_Post&id=<?php echo $item['id']?>" title="" class="title"><?php echo $item['post_title']?></a>
                                 <span class="create-date"><?php echo $item['created_at']?></span>
-                                <p class="desc">Trong ngày hôm nay (11/11) đoàn kiều bào đã tổ chức thành 4 nhóm đi tham quan các điểm như huyện Cần Giờ, Đại học Quốc gia, Khu công nghệ cao TP.HCM, Công viên phần mềm Quang Trung, Khu Nông nghiệp Công nghệ cao, Khu Đô thị mới Thủ Thiêm, Cảng Cát Lái... để kiều bào hiểu thêm về tình hình phát [...]</p>
+                                <p class="desc"><?php echo $item['post_desc']?> [...]</p>
                             </div>
                         </li>
                         <?php }?>

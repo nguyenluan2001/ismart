@@ -46,7 +46,7 @@
                                     <td><span class="thead-text">Danh mục</span></td>
                                     <td><span class="thead-text">Trạng thái</span></td>
                                     <td><span class="thead-text">Người tạo</span></td>
-                                    <td><span class="thead-text">Thời gian</span></td>
+                                    <td><span class="thead-text">Số lượng</span></td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,10 +70,10 @@
                                             </ul>
                                         </td>
                                         <td><span class="tbody-text"><?php echo number_format($item['price'])?>đ</span></td>
-                                        <td><span class="tbody-text"><?php echo $data['cat']['cat_title']?></span></td>
+                                        <td><span class="tbody-text"><?php echo $item['cat_title']?></span></td>
                                         <td><span class="tbody-text">Hoạt động</span></td>
                                         <td><span class="tbody-text">Admin</span></td>
-                                        <td><span class="tbody-text">12-07-2016</span></td>
+                                        <td><span class="tbody-text"><?php echo $item['qty']?></span></td>
                                     </tr>
                                 <?php $count++; } ?>
 

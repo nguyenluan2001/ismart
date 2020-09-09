@@ -1,9 +1,9 @@
 <?php
 class PostsModel extends Database
 {
-    public function Add_Post($post_title,$slug,$post_content,$created_at,$cat_id,$post_author)
+    public function Add_Post($post_title,$slug,$post_content,$created_at,$cat_id,$post_author,$post_desc,$post_thumb)
     {
-        $sql="INSERT INTO `tbl_post`( `post_title`, `post_content`, `post_author`, `created_at`, `slug`, `cat_id`) VALUES ('$post_title','$post_content','$post_author','$created_at','$slug','$cat_id')";
+        $sql="INSERT INTO `tbl_post`( `post_title`, `post_content`, `post_author`, `created_at`, `slug`, `cat_id`,`post_desc`,`post_thumb`) VALUES ('$post_title','$post_content','$post_author','$created_at','$slug','$cat_id','$post_desc','$post_thumb')";
         mysqli_query($this->conn,$sql);
     }
     public function Update_Post($id,$post_title,$slug,$post_content,$created_at,$cat_id,$post_author)

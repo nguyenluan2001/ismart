@@ -34,9 +34,6 @@
                                         <a href="?controller=Home&action=Index" title="">Trang chủ</a>
                                     </li>
                                     <li>
-                                        <a href="?controller=Products&action=Category_Show" title="">Sản phẩm</a>
-                                    </li>
-                                    <li>
                                         <a href="?controller=Blog&action=Index" title="">Blog</a>
                                     </li>
                                     <li>

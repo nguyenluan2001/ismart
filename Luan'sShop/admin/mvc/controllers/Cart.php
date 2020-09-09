@@ -21,6 +21,69 @@ class Cart extends Controller
             'list_customers'=>$list_customers
         ]);
     }
+    public function Delete_Customer()
+    {
+        if(!isset($_POST['checkItem']))
+        {
+            $id=(int)$_GET['id'];
+            $temp=$this->model('CustomerModel');
+            $temp->Delete_Customer($id);
+            header('location:?controller=Cart&action=Show_List_Customers');
+        }
+        else
+        {
+            $temp=$this->model('CustomerModel');
+            foreach($_POST['checkItem'] as $key=>$value)
+            {
+                $temp->Delete_Customer($key);
+
+            }
+            header('location:?controller=Cart&action=Show_List_Customers');
+
+        }
+        
+    }
+    public function Delete_Order()
+    {
+        if(!isset($_POST['checkItem']))
+        {
+            $id=(int)$_GET['id'];
+            $temp=$this->model('CustomerModel');
+            $temp->Delete_Order($id);
+            header('location:?controller=Cart&action=Index');
+        }
+        else
+        {
+            $temp=$this->model('CustomerModel');
+            foreach($_POST['checkItem'] as $key=>$value)
+            {
+                $temp->Delete_Order($key);
+
+            }
+            header('location:?controller=Cart&action=Index');
+
+        }
+    }
+    public function Detail_Order()
+    {
+        $id=(int)$_GET['id'];
+        $temp=$this->model('CustomerModel');
+        $temp_1=$this->model('ProductsModel');
+
+        $data_order=[
+            'info'=>$temp->Get_Customer_By_Id($id),
+            'list_products'=>$temp_1->Get_List_Product_By_CustomerId($id)
+        ];
+        // echo "<pre>";
+        // print_r($data_order);
+        $this->view('Homeview',[
+            'pages'=>'Cart',
+            'item'=>'detail_order',
+            'data_order'=>$data_order
+        ]);
+
+
+    }
 }
 
 

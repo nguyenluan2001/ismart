@@ -7,7 +7,7 @@
                         <a href="" title="">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="" title="">Blog</a>
+                        <a href="" title=""><?php echo $data['data']['page_title']?></a>
                     </li>
                 </ul>
             </div>

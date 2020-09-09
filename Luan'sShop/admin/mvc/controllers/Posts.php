@@ -29,11 +29,12 @@ class Posts extends Controller
             $created_at=date('d-m-yy',$time_temp);
             $cat_id=$_POST['post_cat_id'];
             $post_author=$_SESSION['admin']['fullname'];
-            $img_post=$_FILES['file']['name'];
+            $post_thumb=$_FILES['file']['name'];
+            $post_desc=$_POST['post_desc'];
             require 'lib/uploads.php';
-            uploads($img_post,"Post");
+            uploads($post_thumb,"Post");
             $temp=$this->model('PostsModel');
-            $temp->Add_Post($post_title,$slug,$post_content,$created_at,$cat_id,$post_author);
+            $temp->Add_Post($post_title,$slug,$post_content,$created_at,$cat_id,$post_author,$post_desc,$post_thumb);
             header('location:?controller=Posts&action=Index');
         }
        

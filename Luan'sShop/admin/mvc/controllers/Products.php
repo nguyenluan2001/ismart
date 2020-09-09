@@ -3,9 +3,12 @@ class Products extends Controller
 {
     public function Index()
     {
+        $temp=$this->model('ProductsModel');
+        $list_products=$temp->Get_List_Products();
         $this->view('HomeView', [
             'pages' => 'Products',
-            'item' => 'list_product'
+            'item' => 'list_product',
+            'list_products'=>$list_products
         ]);
     }
     public function Add_Product()
@@ -23,10 +26,11 @@ class Products extends Controller
             $product_intro = $_POST['product_intro'];
             $product_thumb = $_FILES['file']['name'];
             $cat_id = $_POST['cat_id'];
+            $qty=$_POST['qty'];
             require 'lib/uploads.php';
             uploads($product_thumb,"Product");
             $temp = $this->model('ProductsModel');
-            $temp->Add_Product($product_name, $product_code, $price, $product_desc, $product_intro, $product_thumb, $cat_id);
+            $temp->Add_Product($product_name, $product_code, $price, $product_desc, $product_intro, $product_thumb, $cat_id,$qty);
             header('location:?controller=Products&action=Show_List_Cat');
         }
     }
@@ -45,12 +49,11 @@ class Products extends Controller
         $id = (int)$_GET['id'];
         $temp = $this->model('ProductsModel');
         $list_products = $temp->Get_List_Products_By_CatID($id);
-        $cat = $temp->Get_Cat_By_Id($id);
         $this->view('HomeView', [
             'pages' => 'Products',
             'item' => 'list_product',
             'list_products' => $list_products,
-            'cat' => $cat
+            
         ]);
     }
     public function Update_Product()

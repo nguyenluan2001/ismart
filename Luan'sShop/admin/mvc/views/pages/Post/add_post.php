@@ -14,6 +14,8 @@
                         <input type="text" name="post_title" id="title">
                         <label for="title">Slug ( Friendly_url )</label>
                         <input type="text" name="slug" id="slug">
+                        <label for="post_desc">Mô tả</label>
+                        <input type="text" name="post_desc" id="post_desc">
                         <label for="desc">Nội dung</label>
                         <textarea name="post_content" id="desc" class="ckeditor"></textarea>
                         <label>Hình ảnh</label>

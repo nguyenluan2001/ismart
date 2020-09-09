@@ -16,6 +16,8 @@
                         <input type="text" name="product_code" id="product-code">
                         <label for="price">Giá sản phẩm</label>
                         <input type="text" name="price" id="price">
+                        <label for="price">Số lượng</label>
+                        <input type="text" name="qty" id="qty">
                         <label for="desc">Mô tả ngắn</label>
                         <textarea name="product_desc" id="desc"></textarea>
                         <label for="desc">Chi tiết</label>

@@ -7,7 +7,7 @@
                         <a href="?controller=Home&action=Index" title="">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="" title=""><?php echo $data['cat']['cat_title']?></a>
+                        <a href="" title=""><?php if(isset($data['cat'])) echo $data['cat']['cat_title']?></a>
                     </li>
                 </ul>
             </div>
@@ -15,11 +15,11 @@
         <div class="main-content fl-right">
             <div class="section" id="list-product-wp">
                 <div class="section-head clearfix">
-                    <h3 class="section-title fl-left"><?php echo $data['cat']['cat_title']?></h3>
+                    <h3 class="section-title fl-left"><?php if(isset($data['cat']))echo $data['cat']['cat_title']?></h3>
                     <div class="filter-wp fl-right">
                         <p class="desc">Hiển thị 45 trên 50 sản phẩm</p>
                         <div class="form-filter">
-                            <form method="POST" action="?controller=Products&action=Filter_Product&cat_id=<?php echo $data['cat_id']?>">
+                            <form method="POST" action="?controller=Products&action=Category_Detail&cat_id=<?php echo $data['cat']['id']?>">
                                 <select name="select">
                                     <option value="0">Sắp xếp</option>
                                     <option value="1">Từ A-Z</option>
@@ -45,8 +45,8 @@
                                 <span class="old">20.900.000đ</span>
                             </div>
                             <div class="action clearfix">
-                                <a href="?controller=Cart&action=AddCart&id=<?php echo $item['id']?>" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?controller=CArt&action=Check_Out" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
+                                <a href="?controller=Cart&action=Add_Cart&id=<?php echo $item['id']?>" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
+                                <a href="?controller=Cart&action=Check_Out" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
                             </div>
                         </li>
 
