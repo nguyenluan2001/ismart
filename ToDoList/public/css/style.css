@@ -1,0 +1,177 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Grandstander', cursive;
+    background: wheat;
+}
+a{
+    text-decoration: none;
+}
+#todo_wp{
+    padding-top: 20px;
+    margin: 0px auto;
+    width:75%;
+    background-color: turquoise;
+    position: relative;
+}
+
+#update_mission{
+    position: absolute;
+    left: 39%;
+    top: 20%;
+    background-color: khaki;  
+    text-align: center;
+    display: none;
+    border-radius: 5px;
+    padding: 5px 5px 0px 0px;
+   
+}
+#update_mission form{
+   width: 200px;
+    height: 100px;
+    padding: 10px 10px;
+    
+}
+#close_update{
+    display: block;
+    text-align: right;
+}
+#update_mission form input#update_box{
+    width: 180px;
+    height: 30px;
+   border-radius: 5px;
+   margin-bottom: 5px;
+
+}
+#update_mission form input#btn_update_mission{
+    width: 100px;
+    height: 30px;
+   border-radius: 5px;
+   margin-bottom: 5px;
+   cursor: pointer;
+
+}
+h2.title{
+    margin-top: 0px;
+    text-align: center;
+}
+#add_mission{
+    width: 500px;
+    margin: 0px auto;
+    text-align: center;
+    margin-bottom:5px
+}
+#input_box{
+    width: 180px;
+    height: 30px;
+    border-radius: 5px;
+}
+#input_box:focus{
+    border: 2px solid red;
+    
+}
+#btn_add_mission{
+   
+    height: 30px;
+    border-radius: 5px;
+    padding: 1px 10px;
+    box-sizing: inherit;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+input#btn_add_mission:hover{
+   
+    box-shadow: 1px 1px  black;
+}
+.mission_item {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: snow;
+    margin-bottom:  10px ;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px;
+    
+}
+
+.mission_item:hover{
+    background-color: wheat;
+    transform: scale(1.05);
+}
+
+.action{
+    text-align: right;
+    margin-top: 35px;
+} 
+.clear_fix{
+    clear: both;
+}
+
+#show_mission{
+    float: left;
+    width: 45%;
+    min-height: 300px;
+    margin-left: 10px;
+
+}
+#done_mission{
+    float: right;
+    width: 45%;
+    min-height: 300px;
+    margin-right: 10px;
+}
+p.error_add_mission,.error_add_table{
+    color: red;
+    font-size: 17px;
+}
+#type_mission {
+    text-align:center;
+}
+#type_mission form{
+    margin-bottom: 10px;
+}
+#type_mission form #table{
+   height: 30px;
+   border-radius: 5px;
+}
+#type_mission form #btn_add_table{
+    height: 30px;
+    border-radius: 5px;
+    padding: 1px 10px;
+    box-sizing: inherit;
+    cursor: pointer;
+    background-color: transparent;
+ }
+ #type_mission form #btn_add_table:hover{
+    box-shadow: 1px 1px black;
+ }
+#type_mission a{
+    color: black;
+    font-size: 30px;
+}
+#type_mission a:hover{
+    color: red;
+}
+#wp_table,#wp_detail_table{
+    min-height: 600px;
+
+}
+#footer{
+    text-align: center;
+}
+.user_name{
+    margin-bottom: 5px;
+}
+a#home,a#logout{
+    color: slategray;
+}
+.delete_table{
+    display: none;
+    margin-left: 5px;
+}
+input[type='text'],input[type='submit']{
+    
+    font-family: 'Grandstander', cursive;
+
+}

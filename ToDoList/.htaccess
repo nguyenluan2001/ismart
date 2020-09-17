@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteRule "^([a-zA-Z0-9]+).html$" "?controller=$1&action=show"
+RewriteRule "^([a-zA-Z]+)-([a-zA-Z0-9_-]+)-([0-9]+).html$" "?controller=$1&action=$2&id=$3"
+RewriteRule "gio-hang.html" "?controller=cart&action=show"
+RewriteRule "cart-show.html" "?controller=cart&action=show"
+
