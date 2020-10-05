@@ -1,0 +1,4 @@
+ReWriteEngine On
+ReWriteRule "Home" "?controller=Home&action=Index"
+ReWriteRule "^(.*)-(\d).html$" "?controller=Post&action=Detail_Post&id=$2"
+ReWriteRule "^([A-Za-z]*)-((\d)*)$" "?controller=Post&action=Post_By_Topic&id=$2"
